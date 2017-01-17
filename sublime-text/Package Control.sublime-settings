@@ -1,0 +1,23 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"AdvancedNewFile",
+		"Git",
+		"GitGutter",
+		"GoSublime",
+		"Material Theme",
+		"Origami",
+		"Package Control",
+		"PlainTasks",
+		"Pretty JSON",
+		"SideBarEnhancements",
+		"SublimeLinter",
+		"SublimeLinter-jshint",
+		"VintageES",
+		"Vuejs Complete Package"
+	]
+}

@@ -1,0 +1,14 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "editor.fontFamily": "'Source Code Pro'",
+    "editor.fontSize": 17,
+    "editor.quickSuggestionsDelay": 0,
+    "editor.acceptSuggestionOnEnter": false,
+    "editor.cursorBlinking": "phase",
+    "editor.cursorStyle": "block",
+    "files.trimTrailingWhitespace": true,
+    "editor.tabSize": 2,
+
+    // Host related
+    "go.gopath": "/home/luladjiev/Projects/go"
+}
