@@ -1,15 +1,25 @@
 // Place your settings in this file to overwrite the default settings
 {
-    "editor.fontFamily": "'Roboto Mono'",
-    "editor.fontSize": 20,
-    "editor.quickSuggestionsDelay": 0,
-    "editor.acceptSuggestionOnEnter": false,
-    "editor.cursorStyle": "underline",
-    "editor.cursorBlinking": "phase",
-    "editor.tabSize": 2,
-    "files.trimTrailingWhitespace": true,
-    "workbench.activityBar.visible": false,
-    "editor.renderLineHighlight": "gutter",
-    "workbench.sideBar.location": "left",
-    "window.menuBarVisibility": "toggle"
-  }
+  "editor.fontFamily": "'Roboto Mono'",
+  "editor.fontSize": 20,
+  "editor.quickSuggestionsDelay": 0,
+  "editor.acceptSuggestionOnEnter": false,
+  "editor.cursorStyle": "underline",
+  "editor.cursorBlinking": "phase",
+  "editor.tabSize": 2,
+  "files.trimTrailingWhitespace": true,
+  "workbench.activityBar.visible": false,
+  "editor.renderLineHighlight": "gutter",
+  "workbench.sideBar.location": "left",
+  "window.menuBarVisibility": "toggle"
+}
+
+/*
+Packages:
+  Document this
+  Git History (git log)
+  Go
+  jshint
+  Material Theme Kit
+  Prettify JSON
+*/
