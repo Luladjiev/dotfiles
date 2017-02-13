@@ -6,6 +6,7 @@
 	"installed_packages":
 	[
 		"AdvancedNewFile",
+		"All Autocomplete",
 		"Git",
 		"GitGutter",
 		"GoSublime",
@@ -14,6 +15,7 @@
 		"Package Control",
 		"PlainTasks",
 		"Pretty JSON",
+		"Sass",
 		"SideBarEnhancements",
 		"SublimeLinter",
 		"SublimeLinter-jshint",
