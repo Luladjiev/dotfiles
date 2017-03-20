@@ -22,7 +22,8 @@
         "<Esc>"
       ]
     }
-  ]
+  ],
+  "workbench.colorTheme": "Material"
 }
 
 /*
@@ -34,4 +35,5 @@ Packages:
   Material Theme Kit
   Prettify JSON
   Vim
+  Advanced New File
 */

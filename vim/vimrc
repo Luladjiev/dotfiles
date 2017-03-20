@@ -7,15 +7,13 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'jdkanani/vim-material-theme'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
-Plugin 'rking/ag.vim'         " The Silver Searcher
-Plugin 'taiansu/nerdtree-ag'  " Search in files through NERDTree
+Plugin 'mileszs/ack.vim'
 Plugin 'kien/ctrlp.vim'
-Plugin 'marijnh/tern_for_vim'
-Plugin 'bling/vim-airline'
-Plugin 'wookiehangover/jshint.vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -35,7 +33,9 @@ set clipboard=unnamed
 set encoding=utf-8
 
 " Trigger autoread when changing buffers or coming back to vim.
-au FocusGained,BufEnter * :silent! !
+if has("unix")
+  au FocusGained,BufEnter * :silent! !
+endif
 
 " Case insensitive searching (unless specified)
 set ignorecase
@@ -107,17 +107,25 @@ map <C-n> :NERDTreeToggle<CR>
 " Airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+let g:airline_theme='bubblegum'
 
-" Font
+" Ack to use Silver searcher
+let g:ackprg = 'ag --nogroup --nocolor --column'
+
+" Font & Styles
 if has("gui_running")
+  set guioptions-=m  "menu bar
+  set guioptions-=T  "toolbar
+  set guioptions-=r  "scrollbar
+
   if has("gui_gtk2")
-    set guifont=Inconsolata\ 12
+    set guifont=Roboto\ Mono\ 12
   elseif has("gui_win32")
-    set guifont=Consolas:h11:cANSI
+    set guifont=Source_Code_Pro:h12:cANSI:qDRAFT
   endif
 endif
 
-" Solarized
+" Material
 syntax enable
 set background=dark
-colorscheme solarized
+colorscheme material-theme
