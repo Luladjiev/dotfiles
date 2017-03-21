@@ -8,13 +8,13 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'jdkanani/vim-material-theme'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'scrooloose/nerdtree'
-Plugin 'mileszs/ack.vim'
 Plugin 'kien/ctrlp.vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-fugitive'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'tpope/vim-fugitive'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -119,8 +119,8 @@ if has("gui_running")
   set guioptions-=T  "toolbar
   set guioptions-=r  "scrollbar
 
-  if has("gui_gtk2")
-    set guifont=Roboto\ Mono\ 12
+  if has("gui_gtk3")
+    set guifont=Source\ Code\ Pro\ 14
   elseif has("gui_win32")
     set guifont=Source_Code_Pro:h12:cANSI:qDRAFT
   endif
