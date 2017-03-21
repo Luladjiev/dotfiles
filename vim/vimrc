@@ -121,9 +121,9 @@ if has("gui_running")
   set guioptions-=r  "scrollbar
 
   if has("gui_gtk3")
-    set guifont=Source\ Code\ Pro\ 14
+    set guifont=Source\ Code\ Pro\ 16
   elseif has("gui_win32")
-    set guifont=Source_Code_Pro:h12:cANSI:qDRAFT
+    set guifont=Source_Code_Pro:h14:cANSI:qDRAFT
   endif
 endif
 
