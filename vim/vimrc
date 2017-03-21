@@ -7,10 +7,11 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'jdkanani/vim-material-theme'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'kristijanhusak/vim-hybrid-material'
 Plugin 'mileszs/ack.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'shutnik/jshint2.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-airline/vim-airline'
@@ -108,7 +109,7 @@ map <C-n> :NERDTreeToggle<CR>
 " Airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-let g:airline_theme='bubblegum'
+let g:airline_theme='hybrid'
 
 " Ack to use Silver searcher
 let g:ackprg = 'ag --nogroup --nocolor --column'
@@ -132,7 +133,12 @@ let g:ctrlp_custom_ignore = {
   \ 'dir': '\.git$\|node_modules\|log\|tmp$'
   \ }
 
+" JSHint
+let jshint2_read = 1
+let jshint2_save = 1
+
 " Material
 syntax enable
+let g:enable_bold_font = 1
 set background=dark
-colorscheme material-theme
+colorscheme hybrid_material
