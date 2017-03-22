@@ -7,11 +7,14 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'cohama/lexima.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'kristijanhusak/vim-hybrid-material'
 Plugin 'mileszs/ack.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'shutnik/jshint2.vim'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-airline/vim-airline'
@@ -33,6 +36,7 @@ set autowrite     " Automatically :write before running commands
 set autoread      " Remember last position in file
 set clipboard=unnamed
 set encoding=utf-8
+set cursorline
 
 " Trigger autoread when changing buffers or coming back to vim.
 if has("unix")
@@ -58,7 +62,6 @@ set relativenumber
 
 " Basics
 inoremap fd <ESC>
-nnoremap <SPACE> <Nop>
 let mapleader = "\<Space>"
 
 " Arrows are unvimlike
@@ -91,6 +94,10 @@ nnoremap tt  :tabedit<Space>
 nnoremap tn  :tabnext<Space>
 nnoremap tm  :tabm<Space>
 nnoremap td  :tabclose<CR>
+nnoremap <leader>bl :ls<CR>
+nnoremap <leader>bn :bn<CR>
+nnoremap <leader>bp :bp<CR>
+nnoremap <leader>bd :bd<CR>
 
 " Scrolling
 set scrolloff=8         "Start scrolling when we're 8 lines away from margins
@@ -98,10 +105,10 @@ set sidescrolloff=15
 set sidescroll=1
 
 " Auto resize Vim splits to active split
-set winwidth=84
-set winheight=5
-set winminheight=5
-set winheight=999
+"set winwidth=84
+"set winheight=5
+"set winminheight=5
+"set winheight=999
 
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
@@ -119,6 +126,7 @@ if has("gui_running")
   set guioptions-=m  "menu bar
   set guioptions-=T  "toolbar
   set guioptions-=r  "scrollbar
+  set linespace=1
 
   if has("gui_gtk3")
     set guifont=Source\ Code\ Pro\ 16
@@ -130,7 +138,7 @@ endif
 " CtrlP
 let g:ctrlp_max_files = 0
 let g:ctrlp_custom_ignore = {
-  \ 'dir': '\.git$\|node_modules\|log\|tmp$'
+  \ 'dir': '\.git$\|node_modules\|reports\|compiled\|log\|tmp$'
   \ }
 
 " JSHint
