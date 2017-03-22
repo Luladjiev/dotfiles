@@ -94,9 +94,9 @@ nnoremap tt  :tabedit<Space>
 nnoremap tn  :tabnext<Space>
 nnoremap tm  :tabm<Space>
 nnoremap td  :tabclose<CR>
-nnoremap <leader>bl :ls<CR>
-nnoremap <leader>bn :bn<CR>
-nnoremap <leader>bp :bp<CR>
+nnoremap <leader>bb :bl<CR>
+nnoremap <C-PageDown> :bn<CR>
+nnoremap <C-PageUp> :bp<CR>
 nnoremap <leader>bd :bd<CR>
 
 " Scrolling
