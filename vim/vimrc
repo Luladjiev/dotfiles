@@ -145,9 +145,6 @@ let g:ctrlp_custom_ignore = {
 let jshint2_read = 1
 let jshint2_save = 1
 
-" YouCompleteMe
-set shortmess+=c
-
 " Material
 syntax enable
 let g:enable_bold_font = 1
