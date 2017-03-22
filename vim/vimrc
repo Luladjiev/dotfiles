@@ -94,9 +94,9 @@ nnoremap tt  :tabedit<Space>
 nnoremap tn  :tabnext<Space>
 nnoremap tm  :tabm<Space>
 nnoremap td  :tabclose<CR>
-nnoremap <leader>bb :bl<CR>
-nnoremap <C-PageDown> :bn<CR>
-nnoremap <C-PageUp> :bp<CR>
+nnoremap <leader>bb :ls<CR>
+nnoremap <leader>n :bn<CR>
+nnoremap <leader>p :bp<CR>
 nnoremap <leader>bd :bd<CR>
 
 " Scrolling
@@ -144,6 +144,9 @@ let g:ctrlp_custom_ignore = {
 " JSHint
 let jshint2_read = 1
 let jshint2_save = 1
+
+" YouCompleteMe
+set shortmess+=c
 
 " Material
 syntax enable
