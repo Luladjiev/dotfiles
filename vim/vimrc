@@ -10,7 +10,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'cohama/lexima.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'kristijanhusak/vim-hybrid-material'
+Plugin 'mhartington/oceanic-next'
 Plugin 'mileszs/ack.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'shutnik/jshint2.vim'
@@ -98,6 +98,7 @@ nnoremap <leader>bb :ls<CR>
 nnoremap <leader>n :bn<CR>
 nnoremap <leader>p :bp<CR>
 nnoremap <leader>bd :bd<CR>
+nnoremap <leader>bD :bd!<CR>
 
 " Scrolling
 set scrolloff=8         "Start scrolling when we're 8 lines away from margins
@@ -116,16 +117,14 @@ map <C-n> :NERDTreeToggle<CR>
 " Airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-let g:airline_theme='hybrid'
+let g:airline_theme='oceanicnext'
 
 " Ack to use Silver searcher
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " Font & Styles
 if has("gui_running")
-  set guioptions-=m  "menu bar
-  set guioptions-=T  "toolbar
-  set guioptions-=r  "scrollbar
+  set guioptions=a
   set linespace=1
 
   if has("gui_gtk3")
@@ -145,8 +144,11 @@ let g:ctrlp_custom_ignore = {
 let jshint2_read = 1
 let jshint2_save = 1
 
-" Material
+if (has("termguicolors"))
+ set termguicolors
+endif
+
+" Theme
 syntax enable
-let g:enable_bold_font = 1
 set background=dark
-colorscheme hybrid_material
+colorscheme OceanicNext
