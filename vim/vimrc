@@ -99,6 +99,7 @@ nnoremap <leader>n :bn<CR>
 nnoremap <leader>p :bp<CR>
 nnoremap <leader>bd :bd<CR>
 nnoremap <leader>bD :bd!<CR>
+nnoremap <leader>sc :noh<CR>
 
 " Scrolling
 set scrolloff=8         "Start scrolling when we're 8 lines away from margins
