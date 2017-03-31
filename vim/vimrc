@@ -16,7 +16,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'shutnik/jshint2.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-fugitive'
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'Shougo/neocomplete.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 call vundle#end()            " required
@@ -100,6 +100,7 @@ nnoremap <leader>p :bp<CR>
 nnoremap <leader>bd :bd<CR>
 nnoremap <leader>bD :bd!<CR>
 nnoremap <leader>sc :noh<CR>
+nnoremap <leader>jp :%!python -m json.tool<CR>
 
 " Scrolling
 set scrolloff=8         "Start scrolling when we're 8 lines away from margins
@@ -148,6 +149,11 @@ let jshint2_save = 1
 if (has("termguicolors"))
  set termguicolors
 endif
+
+" Neocomplete
+let g:neocomplete#enable_at_startup = 1
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<S-TAB>"
 
 " Theme
 syntax enable
