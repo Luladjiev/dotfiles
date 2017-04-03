@@ -144,9 +144,11 @@ let g:ctrlp_custom_ignore = {
 
 " Neocomplete
 let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#sources#syntax#min_keyword_length = 1
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 inoremap <expr><C-g> neocomplete#undo_completion()
+inoremap <expr><C-Space>  pumvisible() ? "" : neocomplete#start_manual_complete()
 
 " Theme
 if (has("termguicolors"))
