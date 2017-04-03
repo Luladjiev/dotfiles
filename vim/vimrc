@@ -142,14 +142,6 @@ let g:ctrlp_custom_ignore = {
   \ 'dir': '\.git$\|node_modules\|reports\|compiled\|log\|tmp$'
   \ }
 
-" JSHint
-let jshint2_read = 1
-let jshint2_save = 1
-
-if (has("termguicolors"))
- set termguicolors
-endif
-
 " Neocomplete
 let g:neocomplete#enable_at_startup = 1
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
@@ -157,6 +149,10 @@ inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 inoremap <expr><C-g> neocomplete#undo_completion()
 
 " Theme
+if (has("termguicolors"))
+ set termguicolors
+endif
+
 syntax enable
 set background=dark
 colorscheme OceanicNext
