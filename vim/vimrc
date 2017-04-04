@@ -116,6 +116,11 @@ nnoremap <leader>gL :Glog -10 -- %<CR>:copen<CR>
 nnoremap <leader>sc :noh<CR>
 nnoremap <leader>jp :%!python -m json.tool<CR>
 
+" Folding
+set foldmethod=indent
+set nofoldenable
+set foldnestmax=5
+
 " Scrolling
 set scrolloff=8         "Start scrolling when we're 8 lines away from margins
 set sidescrolloff=15
