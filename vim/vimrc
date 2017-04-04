@@ -81,11 +81,13 @@ autocmd BufWritePre * :%s/\s\+$//e
 set splitbelow
 set splitright
 
-" Control shortcuts
+" Window shortcuts
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+" Tab shortcuts
 nnoremap th  :tabfirst<CR>
 nnoremap tj  :tabnext<CR>
 nnoremap tk  :tabprev<CR>
@@ -94,11 +96,23 @@ nnoremap tt  :tabedit<Space>
 nnoremap tn  :tabnext<Space>
 nnoremap tm  :tabm<Space>
 nnoremap td  :tabclose<CR>
+
+" Buffer shortcuts
 nnoremap <leader>bb :ls<CR>
 nnoremap <leader>n :bn<CR>
 nnoremap <leader>p :bp<CR>
 nnoremap <leader>bd :bd<CR>
 nnoremap <leader>bD :bd!<CR>
+
+" Vim Fugitive shortcuts
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gn :cnext<CR>
+nnoremap <leader>gp :cprev<CR>
+nnoremap <leader>gN :clast<CR>
+nnoremap <leader>gP :cfirst<CR>
+nnoremap <leader>gL :Glog -10 -- %<CR>:copen<CR>
+
+" Miscellaneous shortcuts
 nnoremap <leader>sc :noh<CR>
 nnoremap <leader>jp :%!python -m json.tool<CR>
 
