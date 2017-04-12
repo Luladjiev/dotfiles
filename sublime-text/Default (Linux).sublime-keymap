@@ -13,8 +13,6 @@
     "keys": ["ctrl+l"],
     "command": "reindent"
   },
-  { "keys": ["ctrl+k"], "command": "move", "args": {"by": "lines", "forward": false} },
-  { "keys": ["ctrl+j"], "command": "move", "args": {"by": "lines", "forward": true} },
   { "keys": ["ctrl+space"], "command": "auto_complete" },
   { "keys": ["ctrl+space"], "command": "replace_completion_with_auto_complete", "context":
     [
