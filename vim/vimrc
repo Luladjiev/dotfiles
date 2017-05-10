@@ -19,6 +19,7 @@ Plugin 'Shougo/neocomplete.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'w0rp/ale'
+Plugin 'easymotion/vim-easymotion'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -87,16 +88,6 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-" Tab shortcuts
-nnoremap th  :tabfirst<CR>
-nnoremap tj  :tabnext<CR>
-nnoremap tk  :tabprev<CR>
-nnoremap tl  :tablast<CR>
-nnoremap tt  :tabedit<Space>
-nnoremap tn  :tabnext<Space>
-nnoremap tm  :tabm<Space>
-nnoremap td  :tabclose<CR>
-
 " Buffer shortcuts
 nnoremap <leader>bb :ls<CR>
 nnoremap <leader>n :bn<CR>
@@ -125,12 +116,6 @@ set foldnestmax=5
 set scrolloff=8         "Start scrolling when we're 8 lines away from margins
 set sidescrolloff=15
 set sidescroll=1
-
-" Auto resize Vim splits to active split
-"set winwidth=84
-"set winheight=5
-"set winminheight=5
-"set winheight=999
 
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
