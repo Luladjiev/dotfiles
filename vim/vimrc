@@ -15,6 +15,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale'
 Plug 'easymotion/vim-easymotion'
+" Javascript
+Plug 'pangloss/vim-javascript'
 call plug#end()
 
 filetype plugin indent on
@@ -86,18 +88,24 @@ nnoremap <C-l> <C-w>l
 
 " Buffer shortcuts
 nnoremap <leader>bb :ls<CR>
-nnoremap <leader>n :bn<CR>
-nnoremap <leader>p :bp<CR>
+nnoremap <leader>h :bfirst<CR>
+nnoremap <leader>k :bn<CR>
+nnoremap <leader>j :bp<CR>
+nnoremap <leader>l :blast<CR>
 nnoremap <leader>bd :bd<CR>
 nnoremap <leader>bD :bd!<CR>
 
 " Vim Fugitive shortcuts
 nnoremap <leader>gs :Gstatus<CR>
-nnoremap <leader>gn :cnext<CR>
-nnoremap <leader>gp :cprev<CR>
-nnoremap <leader>gN :clast<CR>
-nnoremap <leader>gP :cfirst<CR>
+nnoremap <leader>gj :cnext<CR>
+nnoremap <leader>gk :cprev<CR>
+nnoremap <leader>gh :clast<CR>
+nnoremap <leader>gl :cfirst<CR>
 nnoremap <leader>gL :Glog -10 -- %<CR>:copen<CR>
+
+" Ale shortcuts
+nnoremap <leader>aj :ALENext<CR>
+nnoremap <leader>ak :ALEPrevious<CR>
 
 " Miscellaneous shortcuts
 nnoremap <leader>sc :noh<CR>
