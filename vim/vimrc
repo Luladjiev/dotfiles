@@ -1,27 +1,23 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" Set the runtime path to include Vundle and initialize
+call plug#begin('~/.vim/plugged')
+Plug 'airblade/vim-gitgutter'
+Plug 'cohama/lexima.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'mhartington/oceanic-next'
+Plug 'mileszs/ack.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-fugitive'
+Plug 'Shougo/neocomplete.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'w0rp/ale'
+Plug 'easymotion/vim-easymotion'
+call plug#end()
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'cohama/lexima.vim'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'mhartington/oceanic-next'
-Plugin 'mileszs/ack.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'tpope/vim-fugitive'
-Plugin 'Shougo/neocomplete.vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'w0rp/ale'
-Plugin 'easymotion/vim-easymotion'
-call vundle#end()            " required
-filetype plugin indent on    " required
+filetype plugin indent on
 
 set nocompatible
 set backspace=2
