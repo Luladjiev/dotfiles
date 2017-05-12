@@ -15,8 +15,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale'
 Plug 'easymotion/vim-easymotion'
-" Javascript
-Plug 'pangloss/vim-javascript'
+Plug 'tpope/vim-surround'
 call plug#end()
 
 filetype plugin indent on
@@ -36,6 +35,7 @@ set autoread      " Remember last position in file
 set clipboard=unnamed
 set encoding=utf-8
 set cursorline
+set hidden
 
 " Trigger autoread when changing buffers or coming back to vim.
 if has("unix")
@@ -87,11 +87,9 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " Buffer shortcuts
+nnoremap <Tab> :bnext<CR>
+nnoremap <S-Tab> :bprevious<CR>
 nnoremap <leader>bb :ls<CR>
-nnoremap <leader>h :bfirst<CR>
-nnoremap <leader>k :bn<CR>
-nnoremap <leader>j :bp<CR>
-nnoremap <leader>l :blast<CR>
 nnoremap <leader>bd :bd<CR>
 nnoremap <leader>bD :bd!<CR>
 
