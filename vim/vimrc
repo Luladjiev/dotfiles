@@ -145,7 +145,7 @@ endif
 " CtrlP
 let g:ctrlp_max_files = 0
 let g:ctrlp_custom_ignore = {
-  \ 'dir': '\.git$\|node_modules\|reports\|compiled\|log\|tmp$'
+  \ 'dir': '\.git$\|node_modules\|test\|reports\|compiled\|log\|tmp$'
   \ }
 
 " Neocomplete
