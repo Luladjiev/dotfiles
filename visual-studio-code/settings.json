@@ -23,17 +23,16 @@
       ]
     }
   ],
-  "workbench.colorTheme": "Sublime Material Theme - Dark"
+  "workbench.colorTheme": "One Dark Pro"
 }
 
 /*
 Packages:
-  Document this
+  Advanced New File
+  eslint
   Git History (git log)
   Go
-  jshint
-  Material Theme Kit
+  One Dark Pro
   Prettify JSON
   Vim
-  Advanced New File
 */
