@@ -11,5 +11,5 @@
   (setq js-switch-indent-offset 2)
   (setq js2-indent-switch-body t))
 
-(set-face-attribute 'default nil :font "Source Code Pro-14" )
+(set-face-attribute 'default nil :font "Source Code Pro-15")
 ;;; config.el ends here
