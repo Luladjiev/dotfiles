@@ -5,6 +5,8 @@
 
 ;;; Code:
 
-(set-face-attribute 'default nil :font "Source Code Pro-15")
+(setq +doom-font (font-spec :family "Source Code Pro" :size 16)
+      +doom-variable-pitch-font (font-spec :family "Source Code Pro" :size 16)
+      +doom-unicode-font (font-spec :family "Source Code Pro" :size 16))
 
 ;;; init.el ends here
