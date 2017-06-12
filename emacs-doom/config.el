@@ -13,7 +13,7 @@
   (setq js2-indent-switch-body t))
 
 (after! company
-	(setq company-idle-delay 0.2))
+  (setq company-idle-delay 0.2))
 
 (after! evil-escape
   ;; Change the evil escape sequence to fd instead of jk
