@@ -8,6 +8,9 @@
 ;;; I'm not a react dev yet
 (def-package-hook! rjsx-mode :disable)
 
+;;; Disable highlight-indentation. Eslint is going crazy
+(def-package-hook! highlight-indentation :disable)
+
 (add-hook! 'js2-mode-hook
   (setq js-switch-indent-offset 2)
   (setq js2-indent-switch-body t))
