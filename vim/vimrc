@@ -2,17 +2,17 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 call plug#begin('~/.vim/plugged')
+Plug 'joshdick/onedark.vim'
+Plug '~/.vim/plugged/joshdick/onedark.vim/autoload/lightline/colorscheme'
+Plug 'itchyny/lightline.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'cohama/lexima.vim'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'mhartington/oceanic-next'
 Plug 'mileszs/ack.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
 Plug 'Shougo/neocomplete.vim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale'
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-surround'
@@ -122,10 +122,9 @@ set sidescroll=1
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
 
-" Airline
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
-let g:airline_theme='oceanicnext'
+let g:lightline = {
+      \ 'colorscheme': 'onedark',
+      \}
 
 " Ack to use Silver searcher
 let g:ackprg = 'ag --nogroup --nocolor --column'
@@ -136,7 +135,7 @@ if has("gui_running")
   set linespace=1
 
   if has("gui_gtk3")
-    set guifont=Source\ Code\ Pro\ 16
+    set guifont=Inconsolata\ 16
   elseif has("gui_win32")
     set guifont=Source_Code_Pro:h14:cANSI:qDRAFT
   endif
@@ -163,4 +162,4 @@ endif
 
 syntax enable
 set background=dark
-colorscheme OceanicNext
+colorscheme onedark
