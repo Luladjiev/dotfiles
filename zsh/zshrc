@@ -7,7 +7,7 @@
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="materialshell-oceanic"
+ZSH_THEME="lambda-mod"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -83,5 +83,18 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export NVM_DIR="/home/luladjiev/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+source ~/.profile
+
+# FZF
+source ~/.local/.fzf/shell/completion.zsh
+source ~/.local/.fzf/shell/key-bindings.zsh
+
+# GO
+PATH=$PATH:/usr/local/go/bin
+PATH=$PATH:$HOME/Projects/go/bin
+export PATH
+
+GOPATH=$HOME/Projects/go
+export GOPATH
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
