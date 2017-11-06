@@ -1,6 +1,17 @@
 ;; -*- mode: emacs-lisp -*-
 ;; This file is loaded by Spacemacs at startup.
 ;; It must be stored in your home directory.
+(defun leet-project-root ()
+  "Get the path to the root of your project."
+  (let ((projectile-require-project-root))
+    (ignore-errors (projectile-project-root))))
+
+(defun leet-init-flycheck-eslint ()
+  "Favor local eslint over global."
+  (when (derived-mode-p 'js-mode)
+    (when-let ((exec-path (list (concat (leet-project-root) "node_modules/.bin")))
+               (eslint (executable-find "eslint")))
+      (setq-local flycheck-javascript-eslint-executable eslint))))
 
 (defun dotspacemacs/layers ()
   "Configuration Layers declaration.
@@ -302,11 +313,12 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (global-auto-complete-mode)
-  (spacemacs/toggle-automatic-symbol-highlight-on)
   (spacemacs/toggle-highlight-current-line-globally-off)
   (linum-relative-global-mode)
+  (setq vc-follow-symlinks t)
   (setq dotspacemacs-auto-save-file-location nil)
   (setq tab-width 2)
+  (setq powerline-default-separator 'bar)
   (setq-default js-indent-level 2)
   (setq-default js2-basic-offset 2)
   (setq-default web-mode-markup-indent-offset 2)
@@ -315,9 +327,16 @@ you should place your code here."
   (setq-default web-mode-attr-indent-offset 2)
   (setq-default css-indent-offset 2)
 
+  (evil-select-search-module 'evil-search-module 'evil-search)
+
+  (add-hook 'git-commit-mode-hook 'evil-insert-state)
+  (add-hook 'flycheck-mode-hook #'leet-init-flycheck-eslint)
+
+  (define-key evil-normal-state-map (kbd "z x") 'kill-this-buffer)
   (define-key evil-normal-state-map (kbd "Y") "y$")
-  (define-key evil-insert-state-map (kbd "C-SPC") 'company-complete)
-  )
+  (define-key evil-normal-state-map (kbd "TAB") 'evilmi-jump-items)
+
+  (define-key evil-insert-state-map (kbd "C-SPC") 'company-complete))
 
 
 (custom-set-variables
@@ -327,7 +346,7 @@ you should place your code here."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (xkcd ws-butler winum which-key web-mode web-beautify volatile-highlights vi-tilde-fringe uuidgen use-package toc-org tagedit spaceline powerline smeargle slim-mode scss-mode sass-mode restart-emacs rainbow-delimiters pug-mode popwin persp-mode pcre2el paradox spinner orgit org-projectile org-present org-pomodoro alert log4e gntp org-plus-contrib org-download org-bullets open-junk-file neotree move-text magit-gitflow macrostep lorem-ipsum livid-mode skewer-mode simple-httpd linum-relative link-hint less-css-mode json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc info+ indent-guide hydra hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile helm-gitignore request helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag haml-mode google-translate golden-ratio gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link fuzzy flycheck-pos-tip pos-tip flycheck pkg-info epl flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit magit magit-popup git-commit with-editor evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight emmet-mode elisp-slime-nav dumb-jump f diminish define-word company-web web-completion-data company-tern s dash-functional tern company-statistics company column-enforce-mode coffee-mode clean-aindent-mode bind-map bind-key auto-yasnippet yasnippet auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core async ac-ispell auto-complete popup doom-themes dash))))
+    (org-category-capture xkcd ws-butler winum which-key web-mode web-beautify volatile-highlights vi-tilde-fringe uuidgen use-package toc-org tagedit spaceline powerline smeargle slim-mode scss-mode sass-mode restart-emacs rainbow-delimiters pug-mode popwin persp-mode pcre2el paradox spinner orgit org-projectile org-present org-pomodoro alert log4e gntp org-plus-contrib org-download org-bullets open-junk-file neotree move-text magit-gitflow macrostep lorem-ipsum livid-mode skewer-mode simple-httpd linum-relative link-hint less-css-mode json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc info+ indent-guide hydra hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile helm-gitignore request helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag haml-mode google-translate golden-ratio gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link fuzzy flycheck-pos-tip pos-tip flycheck pkg-info epl flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit magit magit-popup git-commit with-editor evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight emmet-mode elisp-slime-nav dumb-jump f diminish define-word company-web web-completion-data company-tern s dash-functional tern company-statistics company column-enforce-mode coffee-mode clean-aindent-mode bind-map bind-key auto-yasnippet yasnippet auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core async ac-ispell auto-complete popup doom-themes dash))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
