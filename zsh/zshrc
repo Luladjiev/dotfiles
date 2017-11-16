@@ -102,3 +102,5 @@ export GOPATH
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
         source /etc/profile.d/vte.sh
 fi
+
+alias spacemacs="env HOME=$HOME/.emacs_configs/spacemacs emacs &"
