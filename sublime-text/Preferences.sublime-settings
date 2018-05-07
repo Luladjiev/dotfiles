@@ -4,7 +4,7 @@
 	"caret_extra_width": 1,
 	"caret_style": "phase",
 	"close_windows_when_empty": true,
-	"color_scheme": "Packages/Material Theme/schemes/Material-Theme-Darker.tmTheme",
+	"color_scheme": "Packages/Theme - One Dark/One Dark.tmTheme",
 	"font_face": "Hack",
 	"font_size": 16,
 	"ignored_packages":
@@ -17,7 +17,8 @@
 	"remember_full_screen": true,
 	"shift_tab_unindent": true,
 	"tab_size": 2,
-	"theme": "Material-Theme-Darker.sublime-theme",
+	"theme": "One Dark.sublime-theme",
 	"translate_tabs_to_spaces": true,
-	"trim_trailing_white_space_on_save": true
+	"trim_trailing_white_space_on_save": true,
+	"show_tab_close_buttons": true
 }
