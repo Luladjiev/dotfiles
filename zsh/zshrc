@@ -1,8 +1,8 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/luladjiev/.oh-my-zsh
+export ZSH=/home/peter/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -86,8 +86,8 @@ source $ZSH/oh-my-zsh.sh
 source ~/.profile
 
 # FZF
-source ~/.local/.fzf/shell/completion.zsh
-source ~/.local/.fzf/shell/key-bindings.zsh
+#source ~/.local/.fzf/shell/completion.zsh
+#source ~/.local/.fzf/shell/key-bindings.zsh
 
 # GO
 PATH=$PATH:/usr/local/go/bin
@@ -95,12 +95,20 @@ PATH=$PATH:$HOME/Projects/go/bin
 export PATH
 
 GOPATH=$HOME/Projects/go
+GOBIN=$HOME/Projects/go/bin
 export GOPATH
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
         source /etc/profile.d/vte.sh
 fi
 
-alias spacemacs="env HOME=$HOME/.emacs_configs/spacemacs emacs &"
+alias vim=nvim
+
+export PATH=/home/peter/.local/bin:$PATH
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
