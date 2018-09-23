@@ -8,3 +8,5 @@ Package Control.cache/
 Package Control.ca-certs/
 GoSublime*
 *.elc
+
+/sublime-text/GitSavvy/
