@@ -4,7 +4,7 @@
 	"caret_extra_width": 1,
 	"caret_style": "phase",
 	"close_windows_when_empty": true,
-	"color_scheme": "Packages/Theme - One Dark/One Dark.tmTheme",
+	"color_scheme": "Packages/Dracula Color Scheme/Dracula.tmTheme",
 	"font_face": "Hack",
 	"font_size": 16,
 	"ignored_packages":
@@ -16,9 +16,9 @@
 	"origami_auto_close_empty_panes": true,
 	"remember_full_screen": true,
 	"shift_tab_unindent": true,
+	"show_tab_close_buttons": true,
 	"tab_size": 2,
 	"theme": "One Dark.sublime-theme",
 	"translate_tabs_to_spaces": true,
-	"trim_trailing_white_space_on_save": true,
-	"show_tab_close_buttons": true
+	"trim_trailing_white_space_on_save": true
 }
