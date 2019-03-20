@@ -105,7 +105,8 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
         source /etc/profile.d/vte.sh
 fi
 
-alias vim=nvim
+alias vi='nvim -u NONE'
+alias vim='nvim'
 
 export PATH=/home/peter/.local/bin:$PATH
 
