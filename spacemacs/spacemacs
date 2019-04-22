@@ -340,6 +340,9 @@ you should place your code here."
      ((t (:inherit company-tooltip :weight bold :underline nil))))
    '(company-tooltip-common-selection
      ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
+
+  ;; Projectile
+  (setq projectile-git-submodule-command nil) ;; Fixes Windows issue
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
