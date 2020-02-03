@@ -1,13 +1,11 @@
-# If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
 export ZSH=/home/peter/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="lambda-mod"
+#ZSH_THEME="lambda-mod"
+ZSH_THEME="spaceship"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -51,7 +49,7 @@ ZSH_THEME="lambda-mod"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git dnf npm)
+plugins=(git dnf npm z zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -89,15 +87,6 @@ source ~/.profile
 #source ~/.local/.fzf/shell/completion.zsh
 #source ~/.local/.fzf/shell/key-bindings.zsh
 
-# GO
-PATH=$PATH:/usr/local/go/bin
-PATH=$PATH:$HOME/Projects/go/bin
-export PATH
-
-GOPATH=$HOME/Projects/go
-GOBIN=$HOME/Projects/go/bin
-export GOPATH
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 
@@ -108,12 +97,17 @@ fi
 alias vi='nvim -u NONE'
 alias vim='nvim'
 
-export PATH=/home/peter/.local/bin:$PATH
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-
 if [ -z "$TMUX" ]
 then
         tmux attach -t dev || tmux new -t dev
 fi
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+source /home/peter/.config/broot/launcher/bash/br
