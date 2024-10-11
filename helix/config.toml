@@ -1,0 +1,11 @@
+theme = "my-theme"
+
+[editor.cursor-shape]
+insert = "bar"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[keys.insert]
+"C-c" = "normal_mode"

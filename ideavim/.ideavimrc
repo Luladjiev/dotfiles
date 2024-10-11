@@ -1,0 +1,106 @@
+let mapleader=" "
+
+set commentary
+set multiple-cursors
+set NERDTree
+set highlightedyank
+set which-key
+set easymotion
+set surround
+set sneak
+
+set clipboard+=unnamed
+set clipboard+=ideaput
+
+set showmode
+set scrolloff=5
+
+set incsearch
+set ignorecase
+set smartcase
+set hlsearch
+
+set number
+
+set notimeout
+
+set ideajoin
+set ideastatusicon=gray
+set idearefactormode=keep
+
+map L :action NextTab<CR>
+map H :action PreviousTab<CR>
+
+""" Window keybindings
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+
+""" Buffer keybindings
+map <leader>bd <Action>(CloseContent)
+map <leader>bo <Action>(CloseAllEditorsButActive)
+
+""" Code keybindings
+map <leader>ca <Action>(CodeEditorViewGroup)
+map <leader>cc <Action>(CommentByLineComment)
+map <leader>cd <Action>(ShowErrorDescription)
+map <leader>cf <Action>(ReformatCode)
+map <leader>cm <Action>(Move)
+map <leader>crn <Action>(RenameElement)
+map <leader>crr <Action>(FindUsages)
+map <leader>cs <Action>(GotoSymbol)
+
+""" File keybindings
+map <leader>fe :NERDTree<CR>
+map <leader>fg <Action>(FindInPath)
+map <leader>fh <Action>(LocalHistory.ShowHistory)
+map <leader>fH <Action>(LocalHistory.ShowSelectionHistory)
+map <leader>fr <Action>(RecentFiles)
+map <leader>ff <Action>(GotoFile)
+map <leader>fS <Action>(IdeaVim.ReloadVimRc.reload)
+
+""" Git
+map <leader>ga <Action>(Annotate)
+map <leader>gb <Action>(Git.Branches)
+map <leader>gl <Action>(Vcs.Show.Log)
+map <leader>gf <Action>(Vcs.UpdateProject)
+map <leader>gg <Action>(Vcs.QuickListPopupAction)
+map <leader>gh <Action>(Vcs.ShowTabbedFileHistory)
+map <leader>gH <Action>(Vcs.ShowHistoryForBlock)
+map <leader>gp <Action>(Vcs.Push)
+map <leader>gr <Action>(Vcs.RollbackChangedLines)
+map <leader>gR <Action>(ChangesView.Revert)
+map <leader>gs <Action>(Git.Commit.Stage)
+map <leader>gc <Action>(copilot.chat.show)
+
+""" Project
+map <leader>p <Action>(ManageRecentProjects)
+
+" Multiple cursors
+nmap <C-n> <Plug>NextWholeOccurrence
+xmap <C-n> <Plug>NextWholeOccurrence
+nmap g<C-n> <Plug>NextOccurrence
+xmap g<C-n> <Plug>NextOccurrence
+xmap <C-x> <Plug>SkipOccurrence
+xmap <C-p> <Plug>RemoveOccurrence
+nmap <leader><C-n> <Plug>AllWholeOccurrences
+xmap <leader><C-n> <Plug>AllWholeOccurrences
+nmap <leader>g<C-n> <Plug>AllOccurrences
+xmap <leader>g<C-n> <Plug>AllOccurrences
+
+map gd <Action>(GotoDeclaration)
+
+map ]d <Action>(GotoNextError)
+map [d <Action>(GotoPreviousError)
+
+map ]g <Action>(VcsShowNextChangeMarker)
+map [g <Action>(VcsShowPrevChangeMarker)
+
+map K <Action>(QuickJavaDoc)
+imap <C-k> <Action>(QuickJavaDoc)
+
+map <C-z> <Action>(ToggleDistractionFreeMode)
+map <C-S-z> <Action>(ToggleZenMode)
+
+imap <C-j> <Action>(ParameterInfo)
