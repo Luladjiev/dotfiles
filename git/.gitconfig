@@ -1,0 +1,48 @@
+# This is Git's per-user configuration file.
+[user]
+        email = git@luladjiev.com
+        name = Peter Luladjiev
+        signingkey = insert_key
+[commit]
+        gpgsign = true
+[alias]
+        a       = add -A
+        s       = status
+        ci      = commit
+        cia     = commit --amend
+        cim     = commit -m
+        cif     = "!git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup"
+        co      = checkout
+        com     = checkout main
+        cob     = checkout -b
+        l       = log --oneline --graph
+        pr      = pull -pr
+        ri      = rebase -i
+[core]
+        pager = delta
+        pager = delta -s
+[branch]
+        sort = -committerdate
+[tag]
+        sort = version:refname
+[fetch]
+        prune = true
+        pruneTags = true
+        all = true
+[push]
+        default = simple
+        autoSetupRemote = true
+        followTags = true
+[rebase]
+        autosquash = true
+        autostash = true
+[init]
+        defaultBranch = main
+[diff]
+        tool = bc
+[merge]
+        tool = bc
+[mergetool "bc"]
+        trustExitCode = true
+[column]
+      ui = auto
