@@ -2,7 +2,7 @@
 [user]
         email = git@luladjiev.com
         name = Peter Luladjiev
-        signingkey = insert_key
+        signingkey = ~/.ssh/id_ed25519.pubkj
 [commit]
         gpgsign = true
 [alias]
@@ -18,6 +18,7 @@
         l       = log --oneline --graph
         pr      = pull -pr
         ri      = rebase -i
+        staash  = stash --all
 [core]
         pager = delta
         pager = delta -s
@@ -29,6 +30,8 @@
         prune = true
         pruneTags = true
         all = true
+[gpg]
+        format = ssh
 [push]
         default = simple
         autoSetupRemote = true
@@ -45,4 +48,6 @@
 [mergetool "bc"]
         trustExitCode = true
 [column]
-      ui = auto
+        ui = auto
+[rerere]
+        enabled = true
