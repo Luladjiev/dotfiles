@@ -7,15 +7,26 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "assistant": {
-    "default_model": {
-      "provider": "copilot_chat",
-      "model": "gpt-4o"
-    },
-    "version": "2"
+  "icon_theme": {
+    "mode": "system",
+    "light": "Catppuccin Latte",
+    "dark": "Catppuccin Mocha"
   },
-  "theme": "Catppuccin Mocha",
-  "base_keymap": "JetBrains",
+  "features": {
+    "edit_prediction_provider": "zed"
+  },
+  "agent": {
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4"
+    }
+  },
+  "theme": {
+    "mode": "system",
+    "light": "Catppuccin Latte",
+    "dark": "Catppuccin Mocha"
+  },
+  "base_keymap": null,
   "vim_mode": true,
   "ui_font_size": 16,
   "buffer_font_size": 16,
@@ -24,7 +35,7 @@
     "JavaScript": {
       "formatter": {
         "external": {
-          "command": "npx prettier",
+          "command": "./node_modules/.bin/prettier",
           "arguments": ["--stdin-filepath", "{buffer_path}"]
         }
       }
@@ -32,15 +43,7 @@
     "TypeScript": {
       "formatter": {
         "external": {
-          "command": "npx prettier",
-          "arguments": ["--stdin-filepath", "{buffer_path}"]
-        }
-      }
-    },
-    "TSX": {
-      "formatter": {
-        "external": {
-          "command": "npx prettier",
+          "command": "./node_modules/.bin/prettier",
           "arguments": ["--stdin-filepath", "{buffer_path}"]
         }
       }
@@ -48,7 +51,7 @@
     "HTML": {
       "formatter": {
         "external": {
-          "command": "npx prettier",
+          "command": "./node_modules/.bin/prettier",
           "arguments": ["--stdin-filepath", "{buffer_path}"]
         }
       }
@@ -56,7 +59,7 @@
     "CSS": {
       "formatter": {
         "external": {
-          "command": "npx prettier",
+          "command": "./node_modules/.bin/prettier",
           "arguments": ["--stdin-filepath", "{buffer_path}"]
         }
       }
