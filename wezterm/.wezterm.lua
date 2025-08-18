@@ -82,5 +82,12 @@ config.font_size = 15
 
 set_helix_theme(get_appearance())
 
+local act = wezterm.action
+
+config.keys = {
+  { key = 'UpArrow', mods = 'SHIFT', action = act.ScrollByLine(-5) },
+  { key = 'DownArrow', mods = 'SHIFT', action = act.ScrollByLine(5) },
+}
+
 -- and finally, return the configuration to wezterm
 return config
