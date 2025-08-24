@@ -1,26 +1,85 @@
 [
   {
     "context": "Workspace",
-
     "bindings": {
       "cmd-1": "project_panel::ToggleFocus",
       "ctrl-1": "project_panel::ToggleFocus"
     }
   },
-
   {
-    "context": "Editor",
-
+    "context": "VimControl && !VimWaiting && !menu",
     "bindings": {
-      "alt-d": ["editor::SelectNext", { "replace_newest": false }]
-      // "j k": ["workspace::SendKeystrokes", "escape"]
+      // Tab navigation (L/H for next/previous tab)
+      "shift-l": "pane::ActivateNextItem",
+      "shift-h": "pane::ActivatePreviousItem"
     }
   },
   {
-    "context": "VimControl && !menu",
+    "context": "Editor && VimControl && !VimWaiting && !menu",
     "bindings": {
-      "L": "pane::ActivateNextItem",
-      "H": "pane::ActivatePreviousItem"
+      // Window navigation (Ctrl+hjkl)
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-l": "workspace::ActivatePaneRight",
+
+      // Buffer keybindings
+      "space b d": "pane::CloseActiveItem",
+      "space b o": "pane::CloseOtherItems",
+
+      // Code keybindings
+      "space c c": "editor::ToggleComments",
+      "space c d": "editor::Hover",
+      "space c f": "editor::Format",
+      "space c r n": "editor::Rename",
+      "space c r r": "editor::FindAllReferences",
+      "space c s": "outline::Toggle",
+
+      // File keybindings
+      "space f e": "project_panel::ToggleFocus",
+      "space f g": "project_search::ToggleFocus",
+      "space f f": "file_finder::Toggle",
+
+      // Git keybindings
+      "space g a": "git::Blame",
+      "space g b": "git::Branch",
+      "space g f": "git::Pull",
+      "space g p": "git::Push",
+
+      // Project
+      "space p": "projects::OpenRecent",
+
+      // Go to definition and navigation
+      "g d": "editor::GoToDefinition",
+      "] d": "editor::GoToDiagnostic",
+      "[ d": "editor::GoToPreviousDiagnostic",
+      "shift-k": "editor::Hover",
+
+      // Distraction free mode
+      "ctrl-z": "workspace::ToggleCenteredLayout"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert && !menu",
+    "bindings": {
+      // Insert mode keybindings
+      "ctrl-k": "editor::Hover",
+      "ctrl-j": "editor::ShowCompletions"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == visual && !menu",
+    "bindings": {
+      // Visual mode multiple cursors (approximate)
+      "ctrl-n": "editor::AddSelectionAbove"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal && !menu",
+    "bindings": {
+      // Normal mode multiple cursors
+      "ctrl-n": "editor::SelectNext",
+      "space ctrl-n": "editor::SelectAllMatches"
     }
   }
 ]
