@@ -7,6 +7,9 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "prettier": {
+    "allowed": true
+  },
   "ui_font_features": {
     "calt": 0
   },
@@ -17,12 +20,22 @@
     "dark": "Catppuccin Mocha"
   },
   "features": {
-    "edit_prediction_provider": "zed"
+    "edit_prediction_provider": "copilot"
   },
   "agent": {
+    "default_profile": "write",
     "default_model": {
       "provider": "copilot_chat",
-      "model": "gpt-5"
+      "model": "gpt-4.1"
+    }
+  },
+  "context_servers": {
+    "NX": {
+      "source": "custom",
+      "enabled": true,
+      "command": "npx",
+      "args": ["-y", "nx-mcp@latest", "."],
+      "env": {}
     }
   },
   "theme": {
@@ -33,40 +46,5 @@
   "base_keymap": null,
   "vim_mode": true,
   "ui_font_size": 16,
-  "buffer_font_size": 16,
-
-  "languages": {
-    "JavaScript": {
-      "formatter": {
-        "external": {
-          "command": "./node_modules/.bin/prettier",
-          "arguments": ["--stdin-filepath", "{buffer_path}"]
-        }
-      }
-    },
-    "TypeScript": {
-      "formatter": {
-        "external": {
-          "command": "./node_modules/.bin/prettier",
-          "arguments": ["--stdin-filepath", "{buffer_path}"]
-        }
-      }
-    },
-    "HTML": {
-      "formatter": {
-        "external": {
-          "command": "./node_modules/.bin/prettier",
-          "arguments": ["--stdin-filepath", "{buffer_path}"]
-        }
-      }
-    },
-    "CSS": {
-      "formatter": {
-        "external": {
-          "command": "./node_modules/.bin/prettier",
-          "arguments": ["--stdin-filepath", "{buffer_path}"]
-        }
-      }
-    }
-  }
+  "buffer_font_size": 16
 }
